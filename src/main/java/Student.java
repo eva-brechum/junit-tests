@@ -11,9 +11,14 @@ public class Student {
     private ArrayList<Integer> grades;
 
 
-    public Student() {
-        ArrayList<Integer>grades = new ArrayList<>();
+    public Student(long id, String name) {
+        this.id = id;
+        this.name = name;
+        this.grades = new ArrayList<>();
     }
+
+//        ArrayList<Integer>grades = new ArrayList<>();
+
 
     public void setGrades(ArrayList<Integer> grades) {
         this.grades = grades;
