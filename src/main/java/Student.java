@@ -30,7 +30,7 @@ public class Student {
 
 
     public void addGrade(int grade) {
-
+        this.grades.add(grade);
     }
 
     public ArrayList<Integer> getGrades() {
@@ -38,6 +38,9 @@ public class Student {
     }
 
     public double getAverage() {
+        if(this.grades.size() == 0.0) {
+            return 0.0;
+        }
         double sum = 0.0;
         for (int grade: this.grades){
             sum += grade;
