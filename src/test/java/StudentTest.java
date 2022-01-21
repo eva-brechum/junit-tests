@@ -8,17 +8,18 @@ public class StudentTest {
     private long id;
     private String name;
     private ArrayList<Integer> grades;
-    Student eva;
+    private Student eva;
+
 
     @Before
     public void createStudent() {
-        eva = new Student();
-        ;
+       Student eva = new Student(1, "Eva");
+        
     }
 
     @Test
     public void testId() {
-        Assert.assertEquals(Student.getId());
+        Assert.assertEquals(1, eva.getId());
 
     }
 
