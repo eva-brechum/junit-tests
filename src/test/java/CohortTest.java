@@ -13,30 +13,38 @@ public class CohortTest {
 
     @Before
     public void createCohort() {
-       Cohort  killua = new Cohort();
-        Student eva = new Student (1, "eva");
-        Student gon = new Student(2, "gon");
+         killua = new Cohort();
+         eva = new Student (1, "eva");
+         gon = new Student(2, "gon");
+
+         eva.addGrade(98);
+         eva.addGrade(86);
     }
 
     @Test
-    public void testAddStudent() {
+    public void addStudentTest() {
+
         Student eva = new Student (1, "eva");
         Student gon = new Student(2, "gon");
         Cohort killua = new Cohort();
         Cohort hisoka = new Cohort();
         killua.addStudent(eva);
-
         Assert.assertEquals(1,killua.getStudents().size());
         Assert.assertEquals(2, hisoka.getStudents().size());
     }
 
     @Test
-    public void testGetStudents() {
+    public void getStudentsTest() {
 //        Student eva = new Student(1, "eva");
 //        Student gon = new Student (2, "gon");
 //        Cohort killua = new Cohort();
 ////        Cohort hisoka = new Cohort();
 
-        Assert.assertEquals(1, killua.getStudents().get(0));
+        Assert.assertNotSame(1, killua.getStudents().get(1).getId());
     }
+    @Test
+    public void cohortAverageTest() {
+        Assert.assertEquals(98, killua.getCohortAverage(),1);
+    }
+
 }
